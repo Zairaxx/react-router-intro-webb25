@@ -1,23 +1,19 @@
 import Header from "../components/Header"
+import {Link} from "react-router-dom"
 
-const ProductsPage = () => {
+const ProductsPage = ({products}) => {
+
+
     return(<>
 
     <Header
         headingOne="Produkter"
         headingTwo="Höstrea i full gång!"
     />
-
     <ul>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, dolores!</li>
+        {products.map(produkt => <li>
+                <Link to={"/productDetails/" + produkt.id}>{produkt.namn}</Link>
+            </li>)}
     </ul>
     </>)
 }
