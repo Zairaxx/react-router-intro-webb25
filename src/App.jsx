@@ -22,7 +22,7 @@ function App() {
       <h1>Router with API</h1>
       <Routes>
         <Route path="/" element={<Home users={users}/>}/>
-        <Route path="/users/:id/:hej" element={<User users={users} />} />
+        <Route path="/users/:id" element={<User users={users} />} />
       </Routes>
    </BrowserRouter>
   )
